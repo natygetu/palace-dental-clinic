@@ -143,10 +143,36 @@ summary::-webkit-details-marker{display:none}
 #glow{position:fixed;width:360px;height:360px;border-radius:50%;pointer-events:none;z-index:1;opacity:0;transform:translate(-50%,-50%);background:radial-gradient(circle,color-mix(in srgb,var(--gold) 20%,transparent),transparent 65%);transition:opacity .4s}
 .chart{display:flex;gap:6px;align-items:flex-end;height:140px}.chart>div{flex:1;display:flex;flex-direction:column;justify-content:flex-end;align-items:center;height:100%}.chart i{width:100%;background:linear-gradient(var(--gold),var(--gold-d));border-radius:4px 4px 0 0;min-height:2px}.chart small{font-size:.65rem;color:#667}
 input[type=file]{margin-top:6px;font-size:.8rem;padding:6px}
+
+/* ===== v4: bolder UI ===== */
+#splash{position:fixed;inset:0;z-index:200;background:#07162E;display:grid;place-content:center;justify-items:center;gap:18px;transition:opacity .6s,visibility .6s}#splash.off{opacity:0;visibility:hidden}
+#splash img{height:84px;animation:bob 2s ease-in-out infinite}#splash i{width:140px;height:3px;background:rgba(255,255,255,.15);overflow:hidden;position:relative}#splash i::after{content:"";position:absolute;top:0;bottom:0;width:40%;background:var(--gold);animation:ld 1s ease-in-out infinite}@keyframes ld{from{left:-40%}to{left:100%}}
+.hero::before{content:"";position:absolute;inset:-20%;background:radial-gradient(40% 40% at 20% 30%,color-mix(in srgb,var(--gold) 38%,transparent),transparent),radial-gradient(35% 35% at 85% 70%,color-mix(in srgb,var(--navy) 90%,transparent),transparent);filter:blur(40px);animation:au 16s ease-in-out infinite alternate}@keyframes au{to{transform:translate(6%,-5%) rotate(8deg) scale(1.12)}}
+.rot{font:600 1.4rem "Cormorant Garamond","Noto Sans Ethiopic",serif;color:#f3dfa5;min-height:1.6em;margin:14px 0 0}.rot b::after{content:"|";margin-left:2px;animation:bl 1s steps(1) infinite}@keyframes bl{50%{opacity:0}}
+.vwrap{position:relative}.fb{position:absolute;z-index:3;padding:8px 14px;border-radius:99px;background:rgba(255,255,255,.12);backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,.3);font-size:.8rem;font-weight:700;color:#fff;animation:bob 5s ease-in-out infinite}
+.f1{left:-18px;top:18%}.f2{right:-14px;bottom:16%;animation-delay:-2.5s}@keyframes bob{50%{transform:translateY(-10px)}}@media(max-width:800px){.f1{left:-4px}.f2{right:-4px}}
+.mq{overflow:hidden;background:var(--ink);color:var(--gold);padding:12px 0;white-space:nowrap;font-weight:700;letter-spacing:.06em}.mq div{display:inline-flex;animation:mq 30s linear infinite}.mq:hover div{animation-play-state:paused}.mq span{padding-left:40px}.mq span::after{content:"✦";margin-left:40px;opacity:.7}@keyframes mq{to{transform:translateX(-50%)}}
+#why .card{background:linear-gradient(145deg,#fff,var(--ivory));border-radius:20px}#why .card .b::before{font-size:2.2rem}#why .card:nth-child(1) .b::before{content:"💎"}#why .card:nth-child(2) .b::before{content:"💬"}#why .card:nth-child(3) .b::before{content:"🏡"}
+.ph2{aspect-ratio:3/2;display:grid;place-content:center;font-size:3.4rem;background:linear-gradient(135deg,var(--navy),var(--ink))}
+.cta-band{clip-path:polygon(0 7%,100% 0,100% 93%,0 100%);padding:84px 0}
+.gal button{overflow:hidden;border-radius:var(--r)}.gal img{transition:transform .5s}.gal button:hover img{transform:scale(1.1)}
+#tst{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;gap:20px;padding-bottom:14px}#tst blockquote{flex:0 0 min(380px,86%);scroll-snap-align:start;border-radius:18px;box-shadow:0 10px 30px rgba(7,22,46,.1);border:1px solid #e3dcc6;border-left:3px solid var(--gold)}#tst blockquote::before{content:"“";font:700 3.4rem "Cormorant Garamond",serif;color:var(--gold);display:block;line-height:.6}
+.ba{position:relative;aspect-ratio:16/10;max-width:760px;margin:24px auto 12px;overflow:hidden;border-radius:20px;box-shadow:0 20px 50px rgba(7,22,46,.2)}.ba img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}#ba2{clip-path:inset(0 0 0 50%)}
+.ba::after{content:"↔";position:absolute;top:0;bottom:0;left:var(--p,50%);width:3px;background:var(--gold);display:grid;place-content:center;pointer-events:none}.ba input{position:absolute;inset:0;width:100%;height:100%;opacity:0;cursor:ew-resize;margin:0}.ba:focus-within{outline:3px solid var(--gold)}
+.bl,.br{position:absolute;bottom:12px;padding:4px 12px;border-radius:99px;background:rgba(0,0,0,.6);color:#fff;font-size:.78rem;font-weight:700}.bl{left:12px}.br{right:12px}
+#faq .wrap{max-width:820px}#faq details{border-color:#e3dcc6}#faq details p{color:var(--mut)}
+/* admin sidebar + dark */
+#admin:has(.ahead){display:grid;grid-template-columns:230px 1fr;align-items:start}#admin .ahead{flex-direction:column;align-items:stretch;height:100vh;position:sticky;top:0;border-bottom:0;border-right:2px solid var(--gold);overflow:auto}
+#admin .tabs{flex-direction:column;margin:0}#admin .tabs button{text-align:left}#admin .ahead a,#admin .ahead .btn{margin:0!important}#admin .ahead img{height:44px;align-self:flex-start}
+@media(max-width:800px){#admin:has(.ahead){display:block}#admin .ahead{height:auto;position:static;flex-direction:row}#admin .tabs{flex-direction:row}}
+#admin.dk{background:#0b1020;color:#e8ecf5}#admin.dk :is(.box,.stat,.cal>div){background:#141b30;border-color:#27314d;color:#e8ecf5}#admin.dk :is(th,td){border-color:#27314d}#admin.dk :is(input,select,textarea){background:#0e1220;color:#e8ecf5;border-color:#2b3652}
+.cal{display:grid;grid-template-columns:repeat(7,1fr);gap:4px;min-width:680px}.cal>div{min-height:96px;background:#fff;border:1px solid #dde;border-radius:6px;padding:4px;font-size:.72rem;display:flex;flex-direction:column;gap:3px}.cal>div.x{background:transparent;border:0}.cal small{text-align:center;font-weight:700}
+.ev{border:0;border-radius:4px;padding:2px 5px;text-align:left;cursor:pointer;font-size:.7rem;background:#fff1c9;color:#000}.ev.confirmed{background:#d6ecff}
 </style>
 </head>
 <body>
 <div id="pg"></div>
+<div id="splash"><img data-logo src="https://i.postimg.cc/bYQFvTfF/photo-2026-10-26-16-13-38.jpg" alt=""><i></i></div>
 <button id="up" aria-label="Back to top">↑</button>
 <div id="toast" role="status" aria-live="polite"></div>
 <div id="site">
@@ -167,10 +193,12 @@ input[type=file]{margin-top:6px;font-size:.8rem;padding:6px}
   <div><p class="k" data-i="eyebrow">YOUR SMILE, OUR PRIORITY</p>
   <h1 data-i="h_title" data-s="hero_title">Exceptional Dental Care. A Smile That Lasts.</h1>
   <p data-i="h_text" data-s="hero_text" style="font-size:1.1rem;max-width:52ch">Discover personalized dental care in Hawassa, where your comfort, confidence, and oral health come first.</p>
+  <p class="rot"><span data-i="rw0">Care for</span> <b id="rw"></b></p>
   <div class="cta"><a class="btn" href="#book" data-i="book_cta">Book an Appointment</a><a class="btn o" href="#services" data-i="explore">Explore Our Services</a></div></div>
-  <div class="viewer" id="v1"><canvas role="img" aria-label="Interactive 3D model of human teeth"></canvas><div class="vl"><i></i><span data-i="loading">Loading 3D…</span></div><img id="heroimg" data-logo class="vlogo" src="https://i.postimg.cc/bYQFvTfF/photo-2026-10-26-16-13-38.jpg" alt="Palace Dental Clinic logo" width="46" height="46"><span class="vh" data-i="drag">Drag to rotate</span></div>
+  <div class="vwrap"><span class="fb f1" data-i="v1"></span><span class="fb f2" data-i="v3"></span><div class="viewer" id="v1"><canvas role="img" aria-label="Interactive 3D model of human teeth"></canvas><div class="vl"><i></i><span data-i="loading">Loading 3D…</span></div><img id="heroimg" data-logo class="vlogo" src="https://i.postimg.cc/bYQFvTfF/photo-2026-10-26-16-13-38.jpg" alt="Palace Dental Clinic logo" width="46" height="46"><span class="vh" data-i="drag">Drag to rotate</span></div></div>
 </div></div>
 <div class="vals"><div class="wrap"><ul><li data-i="v1">Patient-focused care</li><li data-i="v2">Personalized treatment</li><li data-i="v3">Comfort and cleanliness</li><li data-i="v4">Convenient appointment requests</li></ul></div></div>
+<div class="mq" aria-hidden="true"><div><span data-i="v1"></span><span data-i="v2"></span><span data-i="v3"></span><span data-i="v4"></span><span data-i="v1"></span><span data-i="v2"></span><span data-i="v3"></span><span data-i="v4"></span></div></div>
 <section id="stats" hidden style="padding:36px 0"><div class="wrap"><div class="stats3" id="statsbox"></div></div></section>
 <div id="cfgmsg" class="wrap" hidden><p class="err"><b>Setup needed:</b> add your Supabase URL and public key in <code>index.html</code> (see README). Content and booking are disabled until then.</p></div>
 
@@ -202,9 +230,11 @@ input[type=file]{margin-top:6px;font-size:.8rem;padding:6px}
 <details><summary data-i="tp2">Clean between your teeth</summary><p data-i="tp2t">Floss or use interdental brushes daily to remove what a toothbrush can't reach.</p></details>
 <details><summary data-i="tp3">Go easy on sugary drinks</summary><p data-i="tp3t">Sugar feeds the bacteria that cause cavities, so keep sweets and sodas occasional.</p></details>
 <details><summary data-i="tp4">Visit your dentist regularly</summary><p data-i="tp4t">Regular check-ups help find small problems before they become big ones.</p></details></div></div></div></section>
+<section id="ba" hidden><div class="wrap"><h2 data-i="ba_t">Smile Results</h2><div class="ba" id="bab"><img id="ba1" alt="Before" loading="lazy"><img id="ba2" alt="After" loading="lazy"><input id="bsl" type="range" min="0" max="100" value="50" aria-label="Before and after slider"><span class="bl" data-i="ba_b">Before</span><span class="br" data-i="ba_a">After</span></div><p class="note" style="text-align:center" data-i="ba_n">Results vary by patient.</p></div></section>
 <section id="gallery" class="ivory"><div class="wrap"><h2 data-i="n_gallery">Gallery</h2><div id="gal" class="gal"></div><p id="galempty" class="muted" hidden data-i="gal_empty">Clinic photographs will appear here soon.</p></div></section>
 <section id="testimonials"><div class="wrap"><h2 data-i="n_test">Testimonials</h2><div id="tst" class="cards"></div><p id="tstempty" class="muted" hidden data-i="tst_empty">Patient reviews will appear here.</p></div></section>
 
+<section id="faq" hidden><div class="wrap"><h2 data-i="faq_t">Frequently Asked Questions</h2><div id="faqbox"></div></div></section>
 <section class="cta-band"><div class="wrap"><h2 data-i="band_t">Ready for a Brighter Smile?</h2><a class="btn" href="#book" data-i="book_cta">Book an Appointment</a></div></section>
 <section id="book" class="ivory"><div class="wrap two"><div>
   <h2 data-i="book">Book Appointment</h2><p class="muted" data-i="book_note">Send us your preferred day and time. The clinic will contact you to confirm — your request is not confirmed until then.</p></div>
@@ -296,7 +326,7 @@ function applyLang(){
   setLogo();if(S.hero_image&&/^https?:\/\//.test(S.hero_image))$("#heroimg").src=S.hero_image;
   if(S.seo_title)document.title=S.seo_title;applyTheme();window.__model=S.model_url||"";
   if(S.seo_desc)$('meta[name=description]').content=S.seo_desc;
-  renderSvc();renderGal();renderTst();renderContact();renderStats();
+  renderSvc();renderGal();renderTst();renderContact();renderStats();renderBA();renderFaq();
 }
 const THEMES=["classic","ocean","dark","mint"];
 function applyTheme(){let th;try{th=localStorage.getItem("theme")}catch{}th=th||S.theme||"classic";document.documentElement.dataset.theme=th;
@@ -317,12 +347,28 @@ const upBtn=(inp,accept,folder)=>h("input",{type:"file",accept,"aria-label":"Upl
 function csv(rows){const q=v=>'"'+String(v??"").replace(/"/g,'""').replace(/^([=+\-@])/,"'$1")+'"';
   const o=["patient_name,phone,email,service,preferred_date,preferred_time,status,message,created_at",...rows.map(r=>[r.patient_name,r.phone,r.email,r.services&&r.services.title,r.preferred_date,r.preferred_time,r.status,r.message,r.created_at].map(q).join(","))].join("\n");
   const a=h("a",{href:URL.createObjectURL(new Blob(["\ufeff"+o],{type:"text/csv"})),download:"appointments-"+today()+".csv"});document.body.append(a);a.click();a.remove()}
+Object.assign(T.en,{rw0:"Care for",rw1:"healthy gums",rw2:"bright smiles",rw3:"your comfort",rw4:"every visit",ba_t:"Smile Results",ba_n:"Results vary by patient. Shown with consent.",ba_b:"Before",ba_a:"After",faq_t:"Frequently Asked Questions",cal:"Add to calendar ↓"});
+Object.assign(T.am,{rw0:"እንክብካቤ ለ",rw1:"ጤናማ ድድ",rw2:"ብሩህ ፈገግታ",rw3:"ምቾትዎ",rw4:"እያንዳንዱ ጉብኝት",ba_t:"የፈገግታ ውጤቶች",ba_n:"ውጤት እንደ ታካሚው ይለያያል። በፈቃድ የቀረበ።",ba_b:"በፊት",ba_a:"በኋላ",faq_t:"ተደጋጋሚ ጥያቄዎች",cal:"ወደ ቀን መቁጠሪያ ጨምር ↓"});
+(()=>{let w=1,i=0,d=1;const el=$("#rw");(function k(){const L=t("rw"+w);i+=d;el.textContent=L.slice(0,i);if(d>0&&i>=L.length){d=-1;return setTimeout(k,1500)}if(d<0&&i<=0){d=1;w=w%4+1}setTimeout(k,d>0?90:45)})()})();
+addEventListener("load",()=>setTimeout(()=>$("#splash").classList.add("off"),600));setTimeout(()=>$("#splash").classList.add("off"),3500);
+function renderBA(){const a=S.ba_before,b=S.ba_after,ok=/^https?:\/\//.test(a||"")&&/^https?:\/\//.test(b||"");$("#ba").hidden=!ok;if(ok){$("#ba1").src=a;$("#ba2").src=b}}
+$("#bsl").oninput=e=>{const v=e.target.value;$("#bab").style.setProperty("--p",v+"%");$("#ba2").style.clipPath=`inset(0 0 0 ${v}%)`};
+function renderFaq(){const it=[1,2,3,4].map(i=>({q:c("faq"+i+"_q"),a:c("faq"+i+"_a")})).filter(x=>x.q&&x.a);$("#faq").hidden=!it.length;$("#faqbox").replaceChildren(...it.map(x=>h("details",{},h("summary",{},x.q),h("p",{style:"white-space:pre-line"},x.a))))}
+function icsUrl(d,tm){const z=d.replace(/-/g,"")+"T"+tm.replace(":","")+"00",e=new Date(new Date(d+"T"+tm+":00Z").getTime()+36e5).toISOString().replace(/[-:]/g,"").slice(0,15),n=new Date().toISOString().replace(/[-:]/g,"").slice(0,15)+"Z";
+  return"data:text/calendar;charset=utf-8,"+encodeURIComponent(["BEGIN:VCALENDAR","VERSION:2.0","PRODID:-//Palace Dental//EN","BEGIN:VEVENT","UID:"+Date.now()+"@palace-dental","DTSTAMP:"+n,"DTSTART:"+z,"DTEND:"+e,"SUMMARY:Palace Dental visit (request, not yet confirmed)","END:VEVENT","END:VCALENDAR"].join("\r\n"))}
+async function vCal(b){let m=new Date(new Date().toLocaleString("en-US",{timeZone:TZ}));m.setDate(1);
+  const draw=async()=>{const y=m.getFullYear(),mo=m.getMonth(),first=new Date(y,mo,1),n=new Date(y,mo+1,0).getDate(),p=x=>String(x).padStart(2,"0"),k=d=>`${y}-${p(mo+1)}-${p(d)}`;
+    const rows=chk(await sb.from("appointments").select("*,services(title)").gte("preferred_date",k(1)).lte("preferred_date",k(n)).in("status",["pending","confirmed"]).order("preferred_time"));
+    const cells=[...Array(first.getDay()).fill(null),...Array.from({length:n},(_,i)=>i+1)];
+    b.replaceChildren(h("div",{class:"bar"},h("button",{class:"btn sm o",onclick:()=>{m.setMonth(mo-1);draw()}},"‹ Prev"),h("b",{style:"text-align:center"},first.toLocaleString("en-GB",{month:"long",year:"numeric"})),h("button",{class:"btn sm o",onclick:()=>{m.setMonth(mo+1);draw()}},"Next ›")),
+      h("div",{class:"tw"},h("div",{class:"cal"},["Sun","Mon","Tue","Wed","Thu","Fri","Sat"].map(d=>h("small",{},d)),cells.map(d=>h("div",{class:d?"":"x"},d?[h("b",{},String(d)),...rows.filter(r=>r.preferred_date===k(d)).map(r=>h("button",{class:"ev "+r.status,onclick:()=>apptDlg(r)},r.preferred_time.slice(0,5)+" "+r.patient_name))]:null)))))};
+  await draw()}
 function renderSvc(){
   const box=$("#svc");box.replaceChildren();$("#svcempty").hidden=SV.length>0;
   const sel=$("#bsvc"),cur=sel.value;sel.replaceChildren(h("option",{value:""},t("any")));
   SV.forEach(s=>{
     sel.append(h("option",{value:s.id},pick(s,"title")));
-    box.append(h("article",{class:"card"},s.image_url?h("img",{src:s.image_url,alt:"",loading:"lazy",width:600,height:400}):null,
+    box.append(h("article",{class:"card"},s.image_url?h("img",{src:s.image_url,alt:"",loading:"lazy",width:600,height:400}):h("div",{class:"ph2","aria-hidden":"true"},"🦷"),
       h("div",{class:"b"},h("h3",{},pick(s,"title")),h("p",{class:"muted"},pick(s,"description")),
       h("span",{class:"price"},s.price!=null?`${Number(s.price).toLocaleString()} ${s.currency}`:t("pricing"),s.duration_minutes?` · ${s.duration_minutes} ${t("min")}`:""),
       h("a",{class:"btn sm",href:"#book",onclick:()=>{sel.value=s.id}},t("choose")))));
@@ -378,7 +424,7 @@ $("#bf").addEventListener("submit",async ev=>{
   if(err)return showMsg(err);
   btn.disabled=true;
   try{const{error}=await sb.rpc("submit_appointment",{p_name:f.name.value,p_phone:ph,p_email:f.email.value||null,p_service:f.service.value||null,p_date:f.date.value,p_time:f.time.value,p_message:f.message.value||null});
-    if(error)throw error;ev.target.reset();showMsg(t("ok_book"),1)}catch(e){showMsg(errMsg(e))}finally{btn.disabled=false}
+    if(error)throw error;const dd=f.date.value,tt=f.time.value;ev.target.reset();showMsg(t("ok_book"),1);$("#msg").append(" ",h("a",{href:icsUrl(dd,tt),download:"palace-dental-request.ics",style:"font-weight:700"},t("cal")))}catch(e){showMsg(errMsg(e))}finally{btn.disabled=false}
 });
 $("#cf").addEventListener("submit",async ev=>{
   ev.preventDefault();const f=ev.target.elements,btn=$("#cbtn");
@@ -434,13 +480,14 @@ function newPwView(){
   A.replaceChildren(h("div",{class:"login box"},h("h2",{},"Set new password"),f));
 }
 function shell(){
-  const names=[["overview","Overview"],["appointments","Appointments"],["services","Services"],["gallery","Gallery"],["testimonials","Testimonials"],["messages","Messages"],["settings","Settings"]];
+  try{A.classList.toggle("dk",localStorage.getItem("adk")==="1")}catch{}
+  const names=[["overview","Overview"],["appointments","Appointments"],["calendar","Calendar"],["services","Services"],["gallery","Gallery"],["testimonials","Testimonials"],["messages","Messages"],["settings","Settings"]];
   const tabs=h("nav",{class:"tabs","aria-label":"Admin sections"},names.map(([k,n])=>h("button",{"aria-current":k===tab,onclick:()=>{tab=k;shell()}},n)));
   const body=h("main",{class:"ap"});
   A.replaceChildren(h("div",{class:"ahead"},h("img",{"data-logo":"",src:"https://i.postimg.cc/bYQFvTfF/photo-2026-10-26-16-13-38.jpg",alt:"Palace Dental Clinic"}),tabs,
-    h("a",{href:"#home",style:"color:#e8c76a;margin-left:auto"},"View site"),h("button",{class:"btn sm",onclick:signOut},"Sign out")),body);
+    h("a",{href:"#home",style:"color:#e8c76a;margin-left:auto"},"View site"),h("button",{class:"btn sm o",onclick:()=>{const on=A.classList.toggle("dk");try{localStorage.setItem("adk",on?"1":"0")}catch{}}},"◐ Dark / light"),h("button",{class:"btn sm",onclick:signOut},"Sign out")),body);
   body.append(h("p",{},"Loading…"));setLogo();
-  ({overview:vOverview,appointments:vAppts,services:b=>vCrudView("services",b),gallery:b=>vCrudView("gallery",b),testimonials:b=>vCrudView("testimonials",b),messages:vMsgs,settings:vSettings})[tab](body)
+  ({overview:vOverview,appointments:vAppts,calendar:vCal,services:b=>vCrudView("services",b),gallery:b=>vCrudView("gallery",b),testimonials:b=>vCrudView("testimonials",b),messages:vMsgs,settings:vSettings})[tab](body)
     .catch(e=>body.replaceChildren(h("p",{class:"err"},authErr(e))));
 }
 const authErr=e=>/JWT|expired|permission|policy|401|403/i.test(e&&e.message||"")?"Your session expired or you lack permission. Please sign in again.":"Something went wrong: "+((e&&e.message)||"unknown error");
@@ -477,7 +524,7 @@ async function apptDlg(x){
   const notes=h("textarea",{rows:3},x.admin_notes||""),d=h("input",{type:"date",value:x.preferred_date,min:today()}),tm=h("input",{type:"time",value:x.preferred_time.slice(0,5)});
   const upd=async(patch,okMsg)=>{try{chk(await sb.from("appointments").update(patch).eq("id",x.id));toast(okMsg);dlg.close();shell()}catch(e){toast(authErr(e),1)}};
   dlg.querySelector("#dlgc").replaceChildren(h("h2",{},x.patient_name),
-    h("p",{},h("span",{class:"badge "+x.status},x.status)," ",x.phone,x.email?" · "+x.email:""),h("p",{},"Message: "+(x.message||"—")),h("p",{class:"note"},"Submitted "+fmt(x.created_at)),
+    h("p",{},h("span",{class:"badge "+x.status},x.status)," ",x.phone,x.email?" · "+x.email:""),h("p",{},"Message: "+(x.message||"—")),h("div",{class:"acts"},h("a",{class:"btn sm o",href:"tel:"+x.phone},"📞 Call"),h("a",{class:"btn sm o",target:"_blank",rel:"noopener",href:"https://wa.me/"+x.phone.replace(/\D/g,"")},"💬 WhatsApp")),h("p",{class:"note"},"Submitted "+fmt(x.created_at)),
     h("div",{class:"row"},h("label",{},"Date",d),h("label",{},"Time",tm)),
     h("label",{},"Internal notes (never shown to patients)",notes),
     h("div",{class:"acts",style:"margin:12px 0"},h("button",{class:"btn sm",onclick:()=>upd({preferred_date:d.value,preferred_time:tm.value,admin_notes:notes.value},"Saved")},"Save date/notes"),
@@ -534,12 +581,13 @@ async function vMsgs(b){
 const SK=[["announcement","Announcement bar"],["hero_title","Hero headline"],["hero_title_am","Hero headline (Amharic)"],["hero_text","Hero description","area"],["hero_text_am","Hero description (Amharic)","area"],["hero_image","Hero image URL"],
 ["about","About text","area"],["about_am","About text (Amharic)","area"],["dentist_bio","Dr. Tamirat profile (verified facts only)","area"],["dentist_bio_am","Dr. Tamirat profile (Amharic)","area"],["address","Address"],["address_am","Address (Amharic)"],["phone","Phone"],["email","Email"],
 ["hours","Opening hours","area"],["map_url","Map link (https)"],["facebook","Facebook URL"],["instagram","Instagram URL"],["telegram","Telegram URL"],["footer","Footer text"],["seo_title","SEO title"],["seo_desc","SEO description","area"],["default_lang","Default language (en or am)"],["theme","Default theme for visitors","theme"],["accent","Accent colour (hex like #D6A52A, blank = theme default)"],["logo_url","Logo: upload an image or paste a URL","img"],["model_url","3D teeth model (.glb): upload or paste a URL","glb"],
-...[1,2,3].flatMap(i=>[["stat"+i+"_n","Highlight "+i+" number (e.g. 500+). Verified facts only"],["stat"+i+"_l","Highlight "+i+" label"],["stat"+i+"_l_am","Highlight "+i+" label (Amharic)"]])];
+...[1,2,3].flatMap(i=>[["stat"+i+"_n","Highlight "+i+" number (e.g. 500+). Verified facts only"],["stat"+i+"_l","Highlight "+i+" label"],["stat"+i+"_l_am","Highlight "+i+" label (Amharic)"]]),["ba_before","Before photo (upload or URL; patient consent required)","img"],["ba_after","After photo (upload or URL)","img"],
+...[1,2,3,4].flatMap(i=>[["faq"+i+"_q","FAQ "+i+" question"],["faq"+i+"_a","FAQ "+i+" answer","area"],["faq"+i+"_q_am","FAQ "+i+" question (Amharic)"],["faq"+i+"_a_am","FAQ "+i+" answer (Amharic)","area"]])];
 async function vSettings(b){
   const cur=Object.fromEntries(chk(await sb.from("clinic_settings").select("setting_key,setting_value")).map(r=>[r.setting_key,r.setting_value]));
   const ins={},f=h("form",{class:"f box",onsubmit:async e=>{e.preventDefault();btn.disabled=true;
     try{const rows=SK.map(([k])=>({setting_key:k,setting_value:ins[k].value.trim(),is_public:true})).filter(r=>r.setting_value||cur[r.setting_key]!=null);
-      for(const r of rows)if(/(map_url|facebook|instagram|telegram|hero_image|logo_url|model_url)$/.test(r.setting_key)&&r.setting_value&&!/^https?:\/\//.test(r.setting_value))throw new Error(r.setting_key+" must start with https://");
+      for(const r of rows)if(/(map_url|facebook|instagram|telegram|hero_image|logo_url|model_url|ba_before|ba_after)$/.test(r.setting_key)&&r.setting_value&&!/^https?:\/\//.test(r.setting_value))throw new Error(r.setting_key+" must start with https://");
       if(rows.some(r=>r.setting_key==="accent"&&r.setting_value&&!/^#[0-9a-f]{6}$/i.test(r.setting_value)))throw new Error("Accent must look like #D6A52A");chk(await sb.from("clinic_settings").upsert(rows,{onConflict:"setting_key"}));toast("Settings saved")}catch(er){toast(authErr(er),1)}finally{btn.disabled=false}}});
   SK.forEach(([k,l,ty])=>{ins[k]=ty==="area"?h("textarea",{rows:3},cur[k]||""):ty==="theme"?h("select",{},THEMES.map(o=>h("option",{value:o,selected:(cur[k]||"classic")===o},o))):h("input",{value:cur[k]||""});
     f.append(h("label",{},l,ins[k],ty==="img"?upBtn(ins[k],"image/*","brand"):ty==="glb"?upBtn(ins[k],".glb,model/gltf-binary","models"):null))});
